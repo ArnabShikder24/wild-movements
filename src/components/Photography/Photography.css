@@ -1,0 +1,10 @@
+.photo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+@media only screen and (max-width: 992px) {
+    .photo {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

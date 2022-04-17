@@ -6,3 +6,14 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
 }
+
+@media only screen and (max-width: 992px) {
+    .services-items {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+@media only screen and (max-width: 667px) {
+    .services-items {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
