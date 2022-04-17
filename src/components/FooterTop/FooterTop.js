@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './FooterTop.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faTwitter, faSnapchat, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const FooterTop = () => {
     return (
@@ -29,7 +31,7 @@ const FooterTop = () => {
                         <h3 className='hover-underline-animation'>Company Name</h3>
                         <p>Wild~Movements is my company name, if you need memorible journey so you need a wild photographer to catch ta moment at photo fream. and you come to the right place to get service from me.</p>
                     </div>
-                    <div className="col item social"><a href="/"><i class="icon ion-social-facebook"></i></a><a href="/"><i class="icon ion-social-twitter"></i></a><a href="/"><i class="icon ion-social-snapchat"></i></a><a href="/"><i class="icon ion-social-instagram"></i></a></div>
+                    <div className="col item social"><Link to="/"><FontAwesomeIcon icon={faFacebookF} /></Link><Link to="/"><FontAwesomeIcon icon={faTwitter} /></Link><Link to="/"><FontAwesomeIcon icon={faSnapchat} /></Link><Link to="/"><FontAwesomeIcon icon={faInstagram} /></Link></div>
                 </div>
             </div>
         </footer>

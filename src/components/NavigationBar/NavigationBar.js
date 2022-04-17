@@ -4,6 +4,8 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { faEarth } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const NavigationBar = () => {
     const [user] = useAuthState(auth);
@@ -16,7 +18,7 @@ const NavigationBar = () => {
         <div>
             <Navbar fixed="top" className='py-2' bg="light" expand="lg">
             <Container>
-                <NavLink className='navbar-brand' to="/">Wild~Movements</NavLink>
+                <NavLink className='navbar-brand logo' to="/"><FontAwesomeIcon className='pe-2' icon={faEarth} />Wild~Movements</NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto">
