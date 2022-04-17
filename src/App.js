@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import CheckOut from "./components/CheckOut/CheckOut";
 import Footer from "./components/Footer/Footer";
+import FooterTop from "./components/FooterTop/FooterTop";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import Services from "./components/Services/Services";
@@ -23,6 +24,7 @@ function App() {
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
+      <FooterTop></FooterTop>
       <Footer></Footer>
     </div>
   );
