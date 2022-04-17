@@ -7,7 +7,7 @@ import './Login.css'
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [signInWithEmailAndPassword, user] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -28,6 +28,8 @@ const Login = () => {
                     <div className="input-group">
                         <input  onBlur={e => setPassword(e.target.value)} type="password" placeholder='Your Password' required/>
                     </div>
+                    <p className='mb-2'>{loading && 'Loading...'}</p>
+                    <p className='mb-2 text-danger'>{error && error?.message}</p>
                     <input type="submit" value="Login" />
                 </form>
                 <p className='my-2'>New in Wild Movements? <Link className='create' to='/signup'>Create Account</Link></p>

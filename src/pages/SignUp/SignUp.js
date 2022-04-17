@@ -10,7 +10,9 @@ const SignUp = () => {
     const [confirm, setConfirm] = useState('');
     const [
         createUserWithEmailAndPassword,
-        user
+        user,
+        loading,
+        error
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     const [updateProfile] = useUpdateProfile(auth);
 
@@ -45,6 +47,9 @@ const SignUp = () => {
                     <div className="input-group">
                         <input onBlur={e => setConfirm(e.target.value)} type="password" placeholder='Confirm Password' required/>
                     </div>
+                    <p className='mb-2 text-center'>{loading && 'Loading...'}</p>
+                    <p className='mb-2 text-danger text-center'>{error && error?.message}</p>
+                    <p className='mb-2 text-success text-center'>{user && 'Sign Up Successful'}</p>
                     <input type="submit" value="Sign Up" />
                 </form>
                 <p className='my-2'>Alreay have an account? <Link className='create' to='/login'>Login</Link></p>
