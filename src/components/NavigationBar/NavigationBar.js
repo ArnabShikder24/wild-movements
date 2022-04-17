@@ -14,9 +14,9 @@ const NavigationBar = () => {
 
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar className='py-2' bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="/">Wild~Movements</Navbar.Brand>
+                <NavLink className='navbar-brand' to="/">Wild~Movements</NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto">
