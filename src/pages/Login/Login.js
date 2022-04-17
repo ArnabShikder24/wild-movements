@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css';
 import gIcon from '../../images/google.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -31,7 +34,16 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
     }
-
+    const handleResetPassword = async () => {
+        if(email) {
+            toast('Sent email');
+        }
+        else {
+            toast('Give me your Email')
+            return;
+        }
+        await sendPasswordResetEmail(email);
+    }
     return (
         <div className='food-flex my-5 py-5'>
             <div className='form'>
@@ -50,6 +62,7 @@ const Login = () => {
                     <input type="submit" value="Login" />
                 </form>
                 <p className='my-2'>New in Wild Movements? <Link className='create' to='/signup'>Create Account</Link></p>
+                <p className='my-2'>Forget Password? <button onClick={handleResetPassword} className='btn btn-link text-decoration-none'>Reset Password</button></p>
                 <div className='or'>
                     <div></div>
                     <p>or</p>
@@ -60,6 +73,7 @@ const Login = () => {
                         <img className='pe-2' width='30' src={gIcon} alt="google icon" />
                         Sign in with google</button>
                 </div>
+                <ToastContainer />
             </div>
         </div>
     );
