@@ -32,3 +32,30 @@ input[type = submit]:hover {
     text-decoration: none;
     color: rgb(20, 154, 199);
 }
+
+
+@media only screen and (max-width: 500px) {
+    .form .input-group input {
+        width: 400px;
+    }
+    input[type = submit] {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+    .form .input-group input {
+        width: 320px;
+    }
+    input[type = submit] {
+        width: 320px;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .form .input-group input {
+        width: 95%;
+    }
+    input[type = submit] {
+        width: 95%;
+    }
+}
