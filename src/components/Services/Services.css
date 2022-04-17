@@ -1,0 +1,8 @@
+.service-header {
+    letter-spacing: 6px;
+}
+.services-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+}

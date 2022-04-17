@@ -8,6 +8,7 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirm, setConfirm] = useState('');
+    const [notMatch, setNotMatch] = useState('')
     const [
         createUserWithEmailAndPassword,
         user,
@@ -23,15 +24,16 @@ const SignUp = () => {
     const handleSignUp = async e => {
         e.preventDefault();
         if(password !== confirm) {
-            console.log('password not match')
+            setNotMatch('password not match')
             return;
         }
+        setNotMatch('')
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({displayName: name});
     }
 
     return (
-        <div className='food-flex my-5'>
+        <div className='food-flex my-5 py-5'>
             <div className='form'>
                 <h2 className='mb-4'>Sign Up</h2>
                 <form onSubmit={handleSignUp}>
@@ -49,6 +51,7 @@ const SignUp = () => {
                     </div>
                     <p className='mb-2 text-center'>{loading && 'Loading...'}</p>
                     <p className='mb-2 text-danger text-center'>{error && error?.message}</p>
+                    <p className='mb-2 text-danger text-center'>{notMatch}</p>
                     <p className='mb-2 text-success text-center'>{user && 'Sign Up Successful'}</p>
                     <input type="submit" value="Sign Up" />
                 </form>

@@ -1,0 +1,23 @@
+[
+    {
+      "id": "1",
+      "price": "$2,738",
+      "picture": "https://images.pexels.com/photos/1207875/pexels-photo-1207875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Gonzalez Harper",
+      "discription": "Culpa nostrud excepteur est duis ipsum qui dolor elit. sdfsdfasdfsadfasdfsadf  sdfsaasddf sd sdfsdfsdf a sdfsadf"
+    },
+    {
+      "id": "2",
+      "price": "$2,848",
+      "picture": "https://images.pexels.com/photos/1207875/pexels-photo-1207875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Debra Patton",
+      "discription": "Duis id dolor ipsum commodo tempor cillum eiusmod sunt dolore dolor. Est consequat occaecat et quis"
+    },
+    {
+      "id": "3",
+      "price": "$1,645",
+      "picture": "https://images.pexels.com/photos/1207875/pexels-photo-1207875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Estelle Burris",
+      "discription": "Duis voluptate labore pariatur magna qui adipisicing fugiat exercitation nostrud nostrud proident minim sint."
+    }
+  ]

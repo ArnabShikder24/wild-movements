@@ -5,7 +5,7 @@ import './Banner.css'
 const Banner = () => {
     return (
         <div className='banner'>
-           <div className='text-white h-75 d-flex align-items-center'>
+           <div className='text-white h-100 d-flex align-items-center'>
                <div className='container banner-info'>
                     <h1>Nature Photography</h1>
                     <h3>Close to your eyes</h3>

@@ -14,7 +14,7 @@ const NavigationBar = () => {
 
     return (
         <div>
-            <Navbar className='py-2' bg="light" expand="lg">
+            <Navbar fixed="top" className='py-2' bg="light" expand="lg">
             <Container>
                 <NavLink className='navbar-brand' to="/">Wild~Movements</NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
