@@ -10,10 +10,10 @@ const Service = ({service}) => {
     return (
         <div className='service-item p-2'>
             <img src={service.picture} alt={service.title} />
-            <h3>{service.title}</h3>
+            <h5 className='py-2'>{service.title}</h5>
             <p>{service.discription}</p>
-            <p>{service.price}</p>
-            <button onClick={checkOut} className='checkOut-btn'>Check Out</button>
+            <p className='fs-4 text-primary'>{service.price}</p>
+            <button onClick={checkOut} className='checkOut-btn mb-1'>Check Out</button>
         </div>
     );
 };
