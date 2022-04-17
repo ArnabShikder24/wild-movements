@@ -11,7 +11,7 @@ const Photography = () => {
                    <h5 className='text-center'>Photography</h5>
                    <p className='text-justify py-3'>Photography can be an art form, but not all photographs are created to be artworks or as forms of artistic expression. It took time for photography to be truly recognized as a valid art form. However, in the present day, many art museums and art galleries now exhibit photographic artworks. Photography can serve many purposes and have many facets. Photography can tell a story, it can capture a moment in time, it can document, and it can be art.</p> 
                 </div>
-                <div className='text-center'>
+                <div className='text-center img-section'>
                     <img src={photograph} alt="photography" />
                 </div>
             </div>

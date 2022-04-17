@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
+.img-section img {
+    width: 100%;
+}
 
 @media only screen and (max-width: 992px) {
     .photo {

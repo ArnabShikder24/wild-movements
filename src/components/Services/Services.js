@@ -5,7 +5,6 @@ import './Services.css'
 
 const Services = () => {
     const [services] = useServices();
-    console.log(services)
     return (
         <div className='container my-5 py-5'>
             <h2 className='service-header hover-underline-animation'>Services</h2>

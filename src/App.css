@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+button {
+    cursor: pointer;
+}
 .logo {
     font-family: 'Ms Madi', cursive;
     font-weight: bold;

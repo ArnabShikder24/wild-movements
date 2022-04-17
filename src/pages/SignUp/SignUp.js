@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth'
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import gIcon from '../../images/google.png';
 
 const SignUp = () => {
     const [name, setName] = useState('')
@@ -16,9 +17,13 @@ const SignUp = () => {
         error
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     const [updateProfile] = useUpdateProfile(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     if(user) {
         console.log(user)
+    }
+    if(googleUser) {
+        console.log(googleUser)
     }
 
     const handleSignUp = async e => {
@@ -30,6 +35,10 @@ const SignUp = () => {
         setNotMatch('')
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({displayName: name});
+    }
+
+    const handleGoogleSignUp = () => {
+        signInWithGoogle()
     }
 
     return (
@@ -50,12 +59,24 @@ const SignUp = () => {
                         <input onBlur={e => setConfirm(e.target.value)} type="password" placeholder='Confirm Password' required/>
                     </div>
                     <p className='mb-2 text-center'>{loading && 'Loading...'}</p>
+                    <p className='mb-2 text-center'>{googleLoading && 'Loading...'}</p>
                     <p className='mb-2 text-danger text-center'>{error && error?.message}</p>
+                    <p className='mb-2 text-danger text-center'>{googleError && googleError?.message}</p>
                     <p className='mb-2 text-danger text-center'>{notMatch}</p>
                     <p className='mb-2 text-success text-center'>{user && 'Sign Up Successful'}</p>
                     <input type="submit" value="Sign Up" />
                 </form>
                 <p className='my-2'>Alreay have an account? <Link className='create' to='/login'>Login</Link></p>
+                <div className='or'>
+                    <div></div>
+                    <p>or</p>
+                    <div></div>
+                </div>
+                <div className='text-center'>
+                    <button onClick={handleGoogleSignUp} className='google-btn'>
+                        <img className='pe-2' width='30' src={gIcon} alt="google icon" />
+                        Sign up with google</button>
+                </div>
             </div>
         </div>
     );
