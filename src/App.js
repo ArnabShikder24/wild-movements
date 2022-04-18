@@ -8,6 +8,7 @@ import RequireAuth from "./components/RequireAuth/RequireAuth";
 import Services from "./components/Services/Services";
 import About from "./pages/About/About";
 import Blogs from "./pages/Blogs/Blogs";
+import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import NotFound from "./pages/NotFound/NotFound";
@@ -25,6 +26,7 @@ function App() {
           <Route path='/service/:serviceId' element={<RequireAuth><CheckOut></CheckOut></RequireAuth>}></Route>
           <Route path='/blogs' element={<Blogs></Blogs>}></Route>
           <Route path='/about' element={<About></About>}></Route>
+          <Route path='/contact' element={<Contact></Contact>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>

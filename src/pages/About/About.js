@@ -1,4 +1,6 @@
 import React from 'react';
+import aboutMe from '../../images/aboutme.jpg';
+import './About.css'
 
 const About = () => {
     return (
@@ -6,11 +8,11 @@ const About = () => {
             <h2 className='service-header hover-underline-animation'>About Me</h2>
             <div className='photo mt-5'>
                 <div>
-                   <h5 className='text-center'>Photography</h5>
-                   <p className='text-justify py-3'>Photography can be an art form, but not all photographs are created to be artworks or as forms of artistic expression. It took time for photography to be truly recognized as a valid art form. However, in the present day, many art museums and art galleries now exhibit photographic artworks. Photography can serve many purposes and have many facets. Photography can tell a story, it can capture a moment in time, it can document, and it can be art.</p> 
+                   <h5 className='text-center'>About My Goal</h5>
+                   <p className='text-justify py-3'>I want to see myself as a MERN stack developer. I have never been so active before doing this course. This course has changed my habit. And I am willing to work hard to achieve my goals. I always try to finish class in on time. So far I have finished all the modules on time. And I want to work hard at it in the end. Thanks Programming Hero Team.</p> 
                 </div>
                 <div className='text-center img-section'>
-                    <img src='' alt="photography" />
+                    <img className='about-img' src={aboutMe} alt="photography" />
                 </div>
             </div>
         </div>
