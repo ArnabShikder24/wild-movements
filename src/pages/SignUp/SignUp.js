@@ -19,6 +19,7 @@ const SignUp = () => {
     const [updateProfile] = useUpdateProfile(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
+    // user condition
     if(user) {
         console.log(user)
     }
@@ -26,6 +27,7 @@ const SignUp = () => {
         console.log(googleUser)
     }
 
+    // sing up and update profie function
     const handleSignUp = async e => {
         e.preventDefault();
         if(password !== confirm) {
@@ -37,6 +39,7 @@ const SignUp = () => {
         await updateProfile({displayName: name});
     }
 
+    // Sign in with google 
     const handleGoogleSignUp = () => {
         signInWithGoogle()
     }

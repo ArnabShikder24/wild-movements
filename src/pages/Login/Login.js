@@ -14,6 +14,7 @@ const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
+    // login system email and password
     const handleLogin = e => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password);
@@ -23,6 +24,7 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
 
+    // user condition
     if(user) {
         console.log(user)
         navigate(from, {replace: true})
@@ -31,9 +33,12 @@ const Login = () => {
         console.log(googleUser)
         navigate(from, {replace: true})
     }
+
+    // google sign in with popup
     const handleGoogleSignIn = () => {
         signInWithGoogle()
     }
+    //reset password and tostify
     const handleResetPassword = async () => {
         if(email) {
             toast('Sent email');
