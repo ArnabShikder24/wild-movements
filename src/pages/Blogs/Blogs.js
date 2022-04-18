@@ -15,7 +15,7 @@ const Blogs = () => {
             </div>
             <div className="mb-4">
                 <h2 className='hover-underline-animation mb-3'>3. What other services does firebase provide other than authentication?</h2>
-                <h4>There are many services whice firebase provides. Cloud Firestore, Cloud Functions, Hosting, Cloud Storage, Google Analytics, Predictions, Cloud Messaging, Dynamic Links, Remote Config etc. it can help in developing. firebase hoisting we can use easly and deploy our sites to firebase.</h4>
+                <h4>There are many services whice firebase provides. Cloud Firestore, Cloud Functions, Hosting, Cloud Storage, Google Analytics, Predictions, Cloud Messaging, Dynamic Links, Remote Config etc. it can help in developing. firebase hosting we can use easly and deploy our sites to firebase.</h4>
             </div>
         </div>
     );
